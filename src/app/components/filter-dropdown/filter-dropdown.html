@@ -1,0 +1,55 @@
+<button
+  type="button"
+  class="flex items-center w-full max-md:justify-center gap-2 max-md:gap-6 rounded-lg border bg-white py-2.5 pr-3 pl-4 text-sm font-medium transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-(--color-accent-orange)"
+  [class]="isOpen() ? 'border-(--color-primary-dark)' : 'border-(--color-border)'"
+  [attr.aria-expanded]="isOpen()"
+  [attr.aria-haspopup]="'listbox'"
+  [attr.aria-label]="label()"
+  (click)="toggleDropdown($event)"
+>
+  <span class="text-(--color-primary-dark)">{{ label() }}</span>
+  <img
+    src="/images/icon-chevron-down.svg"
+    alt=""
+    class="h-4 w-4 transition-transform"
+    [class.rotate-180]="isOpen()"
+  />
+</button>
+
+@if (isOpen()) {
+  <div
+    class="absolute top-full left-0 z-50 mt-2 min-w-44 rounded-lg border border-(--color-border) bg-white py-2 shadow-lg"
+    role="listbox"
+    [attr.aria-label]="label() + ' options'"
+  >
+    @for (option of options(); track option.value) {
+      <button
+        type="button"
+        role="option"
+        class="flex w-full cursor-pointer items-center gap-3 px-4 py-2 text-left text-sm text-(--color-primary-dark) transition-colors hover:bg-gray-50"
+        [attr.aria-selected]="selectedValue() === option.value"
+        (click)="selectOption(option.value)"
+      >
+        <span
+          class="flex h-4 w-4 items-center justify-center rounded-full border"
+          [class]="selectedValue() === option.value ? 'border-(--color-primary-dark)' : 'border-(--color-secondary)'"
+        >
+          @if (selectedValue() === option.value) {
+            <span class="h-2 w-2 rounded-full bg-(--color-primary-dark)"></span>
+          }
+        </span>
+        <span>{{ option.label }}</span>
+      </button>
+    }
+
+    <div class="mx-4 my-2 border-t border-(--color-border)"></div>
+
+    <button
+      type="button"
+      class="flex w-full cursor-pointer items-center gap-3 px-4 py-2 text-left text-sm text-(--color-secondary) transition-colors hover:bg-gray-50"
+      (click)="clearSelection()"
+    >
+      Clear
+    </button>
+  </div>
+}
