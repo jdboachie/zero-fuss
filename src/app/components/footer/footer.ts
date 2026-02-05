@@ -6,13 +6,11 @@ import { NgOptimizedImage } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgOptimizedImage],
   template: `
-    <footer class="mx-auto max-w-(--max-content-width) px-6">
-      <div class="flex items-center justify-between border-t border-(--color-divider) py-10">
-        <p class="text-base font-medium tracking-[-0.019em] text-(--color-primary-dark)">
-          Made with ❤️ and 🥑
-        </p>
-
-        <nav aria-label="Social media links">
+    <footer class="mx-auto max-w-(--max-content-width) px-4 md:px-8">
+      <div
+        class="flex flex-col items-center gap-6 border-t border-(--color-divider) py-8 md:flex-row md:justify-between md:py-10"
+      >
+        <nav aria-label="Social media links" class="order-1 md:order-2">
           <ul class="flex items-center gap-6">
             @for (social of socialLinks; track social.label) {
               <li>
@@ -29,6 +27,12 @@ import { NgOptimizedImage } from '@angular/common';
             }
           </ul>
         </nav>
+
+        <p
+          class="order-2 text-center text-base font-medium tracking-[-0.019em] text-(--color-primary-dark) md:order-1 md:text-left"
+        >
+          Made with ❤️ and 🥑
+        </p>
       </div>
     </footer>
   `,

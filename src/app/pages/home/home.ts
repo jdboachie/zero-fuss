@@ -15,14 +15,14 @@ import { CtaSectionComponent } from '../../components/cta-section/cta-section';
   ],
   template: `
     <div class="flex flex-col">
-      <div class="pb-20">
+      <div class="pb-10 md:pb-16 lg:pb-20">
         <app-hero-section />
       </div>
 
-      <main class="pt-20">
+      <main class="pt-16 md:pt-20 lg:pt-20">
         <app-features-section />
 
-        <div class="mx-auto max-w-(--max-content-width)" role="presentation">
+        <div class="lg:mx-auto lg:max-w-(--max-content-width)" role="presentation">
           <hr class="border-t border-(--color-divider)" />
         </div>
 

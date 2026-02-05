@@ -7,19 +7,19 @@ import { NgOptimizedImage } from '@angular/common';
   imports: [NgOptimizedImage],
   template: `
     <section
-      class="mx-auto flex max-w-(--max-content-width) flex-col items-center gap-12 pb-24"
+      class="mx-auto flex max-w-(--max-content-width) flex-col lg:items-center gap-8 px-4 pb-16 md:gap-12 md:px-8 md:pb-20 lg:pb-24"
       aria-labelledby="features-title"
     >
       <h2
         id="features-title"
-        class="font-(family-name:--font-heading) text-5xl font-extrabold leading-[1.2] tracking-[-0.04em] text-(--color-primary-dark)"
+        class="font-(family-name:--font-heading) text-[40px] font-extrabold leading-[1.2] tracking-[-0.05em] text-(--color-primary-dark) md:text-5xl md:tracking-[-0.04em]"
       >
         What you'll get
       </h2>
 
-      <div class="grid w-full grid-cols-3 gap-8">
+      <div class="grid w-full grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
         @for (feature of features; track feature.title) {
-          <article class="flex flex-col gap-6">
+          <article class="flex flex-col gap-5 md:gap-6">
             <div
               class="flex h-15 w-15 items-center justify-center rounded-xl border border-(--color-border) bg-white shadow-[0_1px_0_0_rgba(233,237,232,1)]"
             >

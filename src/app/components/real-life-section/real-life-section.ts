@@ -7,13 +7,13 @@ import { NgOptimizedImage } from '@angular/common';
   imports: [NgOptimizedImage],
   template: `
     <section
-      class="mx-auto flex max-w-(--max-content-width) items-center gap-12 py-24"
+      class="mx-auto flex max-w-(--max-content-width) flex-col gap-8 px-4 py-16 md:gap-10 md:px-8 md:py-20 lg:flex-row lg:items-center lg:gap-12 lg:py-24"
       aria-labelledby="real-life-title"
     >
       <div class="flex flex-1 flex-col gap-5">
         <h2
           id="real-life-title"
-          class="font-(family-name:--font-heading) text-5xl font-extrabold leading-[1.36] tracking-[-0.03em] text-(--color-primary-dark)"
+          class="font-(family-name:--font-heading) text-[40px] font-extrabold leading-[1.2] tracking-[-0.05em] text-(--color-primary-dark) md:text-5xl md:leading-[1.36] md:tracking-[-0.03em]"
         >
           Built for real life
         </h2>
@@ -21,10 +21,10 @@ import { NgOptimizedImage } from '@angular/common';
           class="font-(family-name:--font-body) text-xl font-medium leading-normal tracking-[-0.02em] text-(--color-secondary)"
         >
           Cooking shouldn't be complicated. These recipes come in under
-          <span class="relative inline-block">
+          <span class="relative inline-block font-bold">
             30 minutes
             <span
-              class="absolute bottom-0.5 left-0 -z-10 h-2.5 w-full bg-(--color-accent-orange)"
+              class="absolute bottom-1.5 rounded-sm left-0 -z-10 h-2.5 w-full bg-(--color-accent-orange)"
               aria-hidden="true"
             ></span>
           </span>
@@ -37,7 +37,9 @@ import { NgOptimizedImage } from '@angular/common';
         </p>
       </div>
 
-      <div class="relative h-112.5 w-158.75 shrink-0 overflow-hidden rounded-2xl">
+      <div
+        class="relative h-60.75 w-full shrink-0 overflow-hidden rounded-xl md:h-124.75 md:w-176 md:rounded-2xl lg:h-112.5 lg:w-158.75"
+      >
         <img
           ngSrc="/images/image-home-real-life-large.webp"
           alt="A person preparing a healthy meal in a bright, modern kitchen with fresh ingredients on the counter"
