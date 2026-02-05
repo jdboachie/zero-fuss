@@ -1,0 +1,44 @@
+<article
+  class="flex h-full flex-col overflow-hidden rounded-lg border border-(--color-border) bg-white"
+>
+  <div class="relative aspect-4/3 w-full overflow-hidden">
+    @if (recipe().image.small) {
+      <img [ngSrc]="recipe().image.small" [alt]="recipe().title" fill class="object-cover" />
+    }
+  </div>
+
+  <div class="flex flex-1 flex-col p-4">
+    <h3 class="text-preset-5 line-clamp-2 text-(--color-primary-dark)">
+      {{ recipe().title }}
+    </h3>
+
+    <p class="text-preset-9 mt-1 line-clamp-2 text-(--color-secondary)">
+      {{ recipe().overview }}
+    </p>
+
+    <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-(--color-secondary)">
+      <div class="flex items-center gap-1.5">
+        <img ngSrc="/images/icon-servings.svg" alt="" width="16" height="16" />
+        <span>Servings: {{ recipe().servings }}</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <img ngSrc="/images/icon-prep-time.svg" alt="" width="16" height="16" />
+        <span>Prep: {{ recipe().prepMinutes }} mins</span>
+      </div>
+    </div>
+
+    <div class="mt-1 flex items-center gap-1.5 text-sm text-(--color-secondary)">
+      <img ngSrc="/images/icon-cook-time.svg" alt="" width="16" height="16" />
+      <span>Cook: {{ recipe().cookMinutes }} min{{ recipe().cookMinutes !== 1 ? 's' : '' }}</span>
+    </div>
+
+    <div class="mt-auto pt-4">
+      <button
+        type="button"
+        class="w-full cursor-pointer rounded-[10px] bg-(--color-primary-dark) px-4 py-3 font-bold text-white transition-colors hover:bg-[#1e4d45] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-orange)"
+      >
+        View Recipe
+      </button>
+    </div>
+  </div>
+</article>

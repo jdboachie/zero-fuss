@@ -1,0 +1,82 @@
+<div class="bg-(--color-background-cream) pb-16 md:pb-20">
+  <section class="mx-auto max-w-(--max-content-width) px-4 pt-10 md:px-8 md:pt-16">
+    <div class="mx-auto max-w-2xl text-center">
+      <h1
+        class="font-(family-name:--font-heading) text-[28px] font-extrabold leading-tight tracking-[-0.03em] text-(--color-primary-dark) md:text-[40px]"
+      >
+        Explore our simple, healthy recipes
+      </h1>
+      <p class="text-preset-9 mx-auto mt-4 max-w-xl text-(--color-secondary)">
+        Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use
+        the search bar to find a recipe by name or ingredient, or simply scroll the list and let
+        something delicious catch your eye.
+      </p>
+    </div>
+
+    <div class="mt-8 flex flex-col gap-4 md:mt-10 md:flex-row md:items-center md:justify-between">
+      <div class="flex flex-col gap-3 md:flex-row md:gap-4">
+        <div class="relative">
+          <select
+            class="w-full appearance-none rounded-lg border border-(--color-border) bg-white py-2.5 pr-10 pl-4 text-sm font-medium text-(--color-primary-dark) focus:outline-2 focus:outline-offset-2 focus:outline-(--color-accent-orange) md:w-auto"
+            aria-label="Filter by maximum prep time"
+          >
+            <option value="">Max Prep Time</option>
+            <option value="5">5 mins</option>
+            <option value="10">10 mins</option>
+            <option value="15">15 mins</option>
+            <option value="30">30 mins</option>
+          </select>
+          <img
+            src="/images/icon-chevron-down.svg"
+            alt=""
+            class="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2"
+          />
+        </div>
+
+        <div class="relative">
+          <select
+            class="w-full appearance-none rounded-lg border border-(--color-border) bg-white py-2.5 pr-10 pl-4 text-sm font-medium text-(--color-primary-dark) focus:outline-2 focus:outline-offset-2 focus:outline-(--color-accent-orange) md:w-auto"
+            aria-label="Filter by maximum cook time"
+          >
+            <option value="">Max Cook Time</option>
+            <option value="5">5 mins</option>
+            <option value="10">10 mins</option>
+            <option value="15">15 mins</option>
+            <option value="20">20 mins</option>
+          </select>
+          <img
+            src="/images/icon-chevron-down.svg"
+            alt=""
+            class="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2"
+          />
+        </div>
+      </div>
+
+      <div class="relative">
+        <img
+          src="/images/icon-search.svg"
+          alt=""
+          class="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2"
+        />
+        <input
+          type="search"
+          placeholder="Search by name or ingredient..."
+          class="w-full rounded-lg border border-(--color-border) bg-white py-2.5 pr-4 pl-10 text-sm text-(--color-primary-dark) placeholder:text-(--color-secondary) focus:outline-2 focus:outline-offset-2 focus:outline-(--color-accent-orange) md:w-72"
+          aria-label="Search recipes by name or ingredient"
+        />
+      </div>
+    </div>
+
+    <div
+      class="mt-8 grid grid-cols-1 gap-6 md:mt-10 md:grid-cols-2 md:gap-8 lg:grid-cols-3"
+      role="list"
+      aria-label="Recipe list"
+    >
+      @for (recipe of recipes; track recipe.id) {
+        <div role="listitem">
+          <app-recipe-card [recipe]="recipe" />
+        </div>
+      }
+    </div>
+  </section>
+</div>
