@@ -1,5 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, effect, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { RecipeCardComponent } from '../../components/recipe-card/recipe-card';
+import { UrlPersistence } from '../../services/url-persistence';
 import {
   FilterDropdownComponent,
   FilterOption,
@@ -14,10 +22,16 @@ import recipeData from '../../../../data.json';
   templateUrl: './recipes.html',
 })
 export class RecipesComponent {
+  private readonly urlPersistence = inject(UrlPersistence);
+
   protected readonly recipes = signal<Recipe[]>(recipeData);
-  protected readonly searchQuery = signal('');
-  protected readonly maxPrepTime = signal<number | null>(null);
-  protected readonly maxCookTime = signal<number | null>(null);
+  protected readonly searchQuery = signal(this.urlPersistence.getQueryParam('q') ?? '');
+  protected readonly maxPrepTime = signal<number | null>(
+    this.urlPersistence.getQueryParamAsNumber('maxPrep'),
+  );
+  protected readonly maxCookTime = signal<number | null>(
+    this.urlPersistence.getQueryParamAsNumber('maxCook'),
+  );
 
   protected readonly prepTimeOptions: FilterOption[] = [
     { value: 0, label: '0 minutes' },
@@ -60,13 +74,11 @@ export class RecipesComponent {
       const query = this.searchQuery();
       const maxPrep = this.maxPrepTime();
       const maxCook = this.maxCookTime();
-      const count = this.totalFilteredRecipes();
 
-      console.log('Filter state changed:', {
-        searchQuery: query || '(empty)',
-        maxPrepTime: maxPrep !== null ? `${maxPrep} mins` : '(any)',
-        maxCookTime: maxCook !== null ? `${maxCook} mins` : '(any)',
-        resultsCount: count,
+      this.urlPersistence.updateQueryParams({
+        q: query || null,
+        maxPrep,
+        maxCook,
       });
     });
   }
