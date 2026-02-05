@@ -1,0 +1,174 @@
+<div class="flex flex-col">
+  <section
+    class="relative mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 pt-8 pb-16 md:pt-12 md:pb-20 lg:flex-row lg:items-start lg:gap-12 lg:pt-20 lg:pb-24"
+    aria-labelledby="mission-title"
+  >
+    <div class="flex flex-1 flex-col gap-5 lg:max-w-130 max-lg:px-4">
+      <span
+        class="inline-flex w-fit rounded bg-(--color-accent-orange) px-2 py-1 font-(family-name:--font-heading) text-sm font-bold"
+      >
+        Our mission
+      </span>
+      <h1
+        id="mission-title"
+        class="font-(family-name:--font-heading) text-[40px] font-extrabold leading-[1.1] tracking-[-0.04em] text-(--color-primary-dark) md:text-[48px] md:tracking-[-0.03em]"
+      >
+        Help more people cook nourishing meals, more often.
+      </h1>
+      <div class="flex flex-col gap-4">
+        <p
+          class="font-(family-name:--font-body) text-base font-medium leading-relaxed tracking-[-0.019em] text-(--color-secondary) md:text-lg"
+        >
+          Healthy Recipe Finder was created to prove that healthy eating can be convenient,
+          affordable, and genuinely delicious.
+        </p>
+        <p
+          class="font-(family-name:--font-body) text-base font-medium leading-relaxed tracking-[-0.019em] text-(--color-secondary) md:text-lg"
+        >
+          We showcase quick, whole-food dishes that anyone can master—no fancy equipment, no
+          ultra-processed shortcuts—just honest ingredients and straightforward steps.
+        </p>
+      </div>
+    </div>
+
+    <div class="relative hidden flex-1 items-start justify-end lg:flex">
+      <img
+        ngSrc="/images/pattern-squiggle-2.svg"
+        alt=""
+        width="224"
+        height="112"
+        class="pointer-events-none mt-54 -mr-32"
+        aria-hidden="true"
+      />
+    </div>
+  </section>
+
+  <main>
+    <div class="mx-auto max-w-(--max-content-width)" role="presentation">
+      <hr class="border-t border-(--color-divider)" />
+    </div>
+
+    <section
+      class="mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 py-16 md:py-20 lg:flex-row lg:gap-16 lg:py-24 max-lg:px-4"
+      aria-labelledby="why-we-exist-title"
+    >
+      <h2
+        id="why-we-exist-title"
+        class="font-(family-name:--font-heading) text-[32px] font-extrabold leading-[1.2] tracking-[-0.03em] text-(--color-primary-dark) md:text-[40px] lg:w-70 lg:shrink-0"
+      >
+        Why we exist
+      </h2>
+
+      <ul class="flex flex-1 flex-col gap-8 lg:gap-10">
+        @for (item of whyWeExist; track item.title) {
+        <li class="flex gap-4">
+          <img
+            ngSrc="/images/icon-bullet-point.svg"
+            alt=""
+            width="20"
+            height="20"
+            class="mt-1 h-5 w-5 shrink-0"
+            aria-hidden="true"
+          />
+          <div class="flex flex-col gap-2">
+            <h3
+              class="font-(family-name:--font-heading) text-lg font-bold leading-snug text-(--color-primary-dark)"
+            >
+              {{ item.title }}
+            </h3>
+            <p
+              class="font-(family-name:--font-body) text-base font-medium leading-relaxed tracking-[-0.019em] text-(--color-secondary)"
+            >
+              {{ item.description }}
+            </p>
+          </div>
+        </li>
+        }
+      </ul>
+    </section>
+
+    <div class="mx-auto max-w-(--max-content-width)" role="presentation">
+      <hr class="border-t border-(--color-divider)" />
+    </div>
+
+    <section
+      class="mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 py-16 md:py-20 lg:flex-row lg:gap-16 lg:py-24  max-lg:px-4"
+      aria-labelledby="philosophy-title"
+    >
+      <h2
+        id="philosophy-title"
+        class="font-(family-name:--font-heading) text-[32px] font-extrabold leading-[1.2] tracking-[-0.03em] text-(--color-primary-dark) md:text-[40px] lg:w-70 lg:shrink-0"
+      >
+        Our food philosophy
+      </h2>
+
+      <ul class="flex flex-1 flex-col gap-8 lg:gap-10">
+        @for (item of philosophy; track item.title) {
+        <li class="flex gap-4">
+          <img
+            ngSrc="/images/icon-bullet-point.svg"
+            alt=""
+            width="20"
+            height="20"
+            class="mt-1 h-5 w-5 shrink-0"
+            aria-hidden="true"
+          />
+          <div class="flex flex-col gap-2">
+            <h3
+              class="font-(family-name:--font-heading) text-lg font-bold leading-snug text-(--color-primary-dark)"
+            >
+              {{ item.title }}
+            </h3>
+            <p
+              class="font-(family-name:--font-body) text-base font-medium leading-relaxed tracking-[-0.019em] text-(--color-secondary)"
+            >
+              {{ item.description }}
+            </p>
+          </div>
+        </li>
+        }
+      </ul>
+    </section>
+
+    <div class="mx-auto max-w-(--max-content-width)" role="presentation">
+      <hr class="border-t border-(--color-divider)" />
+    </div>
+
+    <section
+      class="mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 py-16 md:py-20 lg:flex-row lg:items-start lg:gap-16 lg:py-24  max-lg:px-4"
+      aria-labelledby="beyond-title"
+    >
+      <div class="flex flex-col gap-5 lg:max-w-80">
+        <h2
+          id="beyond-title"
+          class="font-(family-name:--font-heading) text-[32px] font-extrabold leading-[1.2] tracking-[-0.03em] text-(--color-primary-dark) decoration-(--color-primary-dark) decoration-2 underline-offset-8 md:text-[40px]"
+        >
+          Beyond the plate
+        </h2>
+        <p
+          class="font-(family-name:--font-body) text-base font-medium leading-relaxed tracking-[-0.019em] text-(--color-secondary)"
+        >
+          We believe food is a catalyst for community and well-being. By sharing approachable
+          recipes, we hope to:
+        </p>
+        <ul class="flex flex-1 flex-col gap-3">
+          @for (item of beyondPlate; track item) {
+          <li class="flex items-start gap-3">
+            <span
+              class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-(--color-primary-dark)"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="font-(family-name:--font-body) text-base font-medium leading-relaxed tracking-[-0.019em] text-(--color-secondary)"
+            >
+              {{ item }}
+            </span>
+          </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <app-cta-section class="mb-16 block md:mb-20 lg:mb-24" />
+  </main>
+</div>
