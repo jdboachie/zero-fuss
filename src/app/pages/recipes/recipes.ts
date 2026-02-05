@@ -75,6 +75,8 @@ export class RecipesComponent {
       const maxPrep = this.maxPrepTime();
       const maxCook = this.maxCookTime();
 
+      console.log('Recipes filters changed: ', { query, maxPrep, maxCook });
+
       this.urlPersistence.updateQueryParams({
         q: query || null,
         maxPrep,
