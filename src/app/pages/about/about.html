@@ -3,7 +3,7 @@
     class="relative mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 pt-8 pb-16 md:pt-12 md:pb-20 lg:flex-row lg:items-start lg:gap-12 lg:pt-20 lg:pb-24"
     aria-labelledby="mission-title"
   >
-    <div class="flex flex-1 flex-col gap-5 lg:max-w-130 max-lg:px-4">
+    <div class="flex flex-1 flex-col gap-5 lg:max-w-130 max-lg:px-4 h-full self-center">
       <span
         class="inline-flex w-fit rounded bg-(--color-accent-orange) px-2 py-1 font-(family-name:--font-heading) text-sm font-bold"
       >
@@ -31,13 +31,20 @@
       </div>
     </div>
 
-    <div class="relative hidden flex-1 items-start justify-end lg:flex">
+    <div class="relative flex-1 items-start justify-end flex max-lg:px-4">
+      <img
+        ngSrc="/images/image-about-our-mission-large.webp"
+        alt=""
+        width="618"
+        height="600"
+        class="rounded-lg"
+      />
       <img
         ngSrc="/images/pattern-squiggle-2.svg"
         alt=""
         width="224"
         height="112"
-        class="pointer-events-none mt-54 -mr-32"
+        class="pointer-events-none absolute bottom-20 -right-40 max-lg:-right-20"
         aria-hidden="true"
       />
     </div>
@@ -92,7 +99,7 @@
     </div>
 
     <section
-      class="mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 py-16 md:py-20 lg:flex-row lg:gap-16 lg:py-24  max-lg:px-4"
+      class="mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 py-16 md:py-20 lg:flex-row lg:gap-16 lg:py-24 max-lg:px-4"
       aria-labelledby="philosophy-title"
     >
       <h2
@@ -135,10 +142,10 @@
     </div>
 
     <section
-      class="mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 py-16 md:py-20 lg:flex-row lg:items-start lg:gap-16 lg:py-24  max-lg:px-4"
+      class="mx-auto flex w-full max-w-(--max-content-width) flex-col gap-8 py-16 md:py-20 lg:flex-row lg:items-start lg:justify-between lg:py-24 max-lg:px-4"
       aria-labelledby="beyond-title"
     >
-      <div class="flex flex-col gap-5 lg:max-w-80">
+      <div class="flex flex-col gap-5 lg:max-w-80 self-center">
         <h2
           id="beyond-title"
           class="font-(family-name:--font-heading) text-[32px] font-extrabold leading-[1.2] tracking-[-0.03em] text-(--color-primary-dark) decoration-(--color-primary-dark) decoration-2 underline-offset-8 md:text-[40px]"
@@ -167,6 +174,13 @@
           }
         </ul>
       </div>
+      <img
+        ngSrc="/images/image-about-beyond-the-plate-large.webp"
+        width="744"
+        height="400"
+        alt="beyond the plate image"
+        class="rounded-lg"
+      />
     </section>
 
     <app-cta-section class="mb-16 block md:mb-20 lg:mb-24" />
